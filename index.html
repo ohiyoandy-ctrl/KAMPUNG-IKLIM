@@ -1,194 +1,334 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rencana Program Praktik Desa – Kampung Iklim (ProKlim)</title>
+  <meta charset="UTF-8">
+  <title>Program MBKM Desa Bangunemo - KAMPUNG IKLIM</title>
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#101a2b;
-      --muted:#77829a;
-      --text:#e6ecff;
-      --accent:#35c895;
-      --accent-2:#5aa7ff;
-      --danger:#ff6b6b;
-      --border: #223049;
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f5f9f6;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0b1220,#0b1220 50%,#0e1729);color:var(--text);font:500 15px/1.6 "Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    .container{max-width:1200px;margin:32px auto;padding:0 16px}
-    .app{background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.35);overflow:hidden}
-    header{padding:22px 22px;border-bottom:1px solid var(--border);display:flex;gap:14px;align-items:center;justify-content:space-between;background:radial-gradient(1200px 400px at 10% -10%, rgba(53,200,149,.15), transparent), radial-gradient(800px 300px at 90% -20%, rgba(90,167,255,.15), transparent)}
-    .title{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#081422;font-weight:900}
-    h1{font-size:18px;margin:0}
-    .subtitle{color:var(--muted);font-size:13px;margin-top:2px}.toolbar{display:flex;flex-wrap:wrap;gap:10px}
-.toolbar .field{display:flex;align-items:center;gap:8px;background:#0c1626;border:1px solid var(--border);padding:8px 10px;border-radius:12px}
-.toolbar input,.toolbar select{background:transparent;border:none;outline:none;color:var(--text);font:inherit}
-.toolbar input::placeholder{color:#93a0b9}
-.btn{cursor:pointer;border:none;border-radius:12px;padding:10px 14px;font-weight:700;letter-spacing:.2px}
-.btn.primary{background:linear-gradient(135deg,var(--accent),#2fb082);color:#062019}
-.btn.secondary{background:#0c1626;border:1px solid var(--border);color:var(--text)}
-.btn.danger{background:linear-gradient(135deg,#ff8f8f,var(--danger));color:#2b0f0f}
 
-.table-wrap{padding:18px;}
-.table-scroll{max-height:65vh;overflow:auto;border:1px solid var(--border);border-radius:16px}
-table{width:100%;border-collapse:separate;border-spacing:0;min-width:900px;background:#0c1524}
-thead th{position:sticky;top:0;background:#0f1a2b;border-bottom:1px solid var(--border);padding:14px 12px;text-align:left;font-size:13px;color:#aab6cf;z-index:2}
-tbody td{border-bottom:1px solid #18253b;padding:14px 12px;vertical-align:top}
-tbody tr:hover{background:#0e1828}
-.chip{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
-.chip.adaptasi{background:rgba(90,167,255,.15);color:#bcd6ff;border:1px solid #2c5ea7}
-.chip.mitigasi{background:rgba(53,200,149,.15);color:#baf3dd;border:1px solid #1f7a5e}
-.chip.pemberdayaan{background:rgba(255,215,99,.12);color:#ffeab0;border:1px solid #8a6b17}
-.chip.pendukung{background:rgba(170,170,255,.12);color:#d6d6ff;border:1px solid #4e4eb1}
+    header {
+      display: flex;
+      align-items: center;
+      background: #2e7d32;
+      color: white;
+      padding: 15px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
 
-.count{font-size:13px;color:var(--muted);margin:8px 4px}
-footer{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid var(--border);color:#93a0b9;font-size:12px}
-.link{color:#cfe2ff;text-decoration:none;border-bottom:1px dotted #5aa7ff}
-.sort{cursor:pointer;display:inline-flex;gap:6px;align-items:center}
-.sort .arrow{opacity:.35}
-.sort.asc .arrow{transform:rotate(180deg);opacity:1}
-.sort.desc .arrow{opacity:1}
-.no-data{padding:24px;text-align:center;color:#9cb0d1}
-.actions button{background:none;border:none;cursor:pointer;margin-right:6px;font-size:14px}
-.add-btn{margin:12px 18px;display:flex;align-items:center;gap:8px;background:var(--accent);color:#062019;font-weight:700;border:none;padding:10px 14px;border-radius:12px;cursor:pointer}
+    header img {
+      height: 50px;
+      margin-right: 15px;
+    }
 
+    header h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    main {
+      padding: 25px;
+    }
+
+    .table-container {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .table-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .table-header h2 {
+      margin: 0;
+      font-size: 19px;
+      color: #2e7d32;
+    }
+
+    .add-btn {
+      background: #2e7d32;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.3s;
+    }
+
+    .add-btn:hover {
+      background: #256428;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    thead {
+      background: #388e3c;
+      color: white;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background: #e8f5e9;
+    }
+
+    .action-btn {
+      cursor: pointer;
+      border: none;
+      background: none;
+      margin: 0 5px;
+      transition: 0.2s;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+    }
+
+    .edit .icon {
+      fill: #ff9800;
+    }
+
+    .delete .icon {
+      fill: #f44336;
+    }
+
+    .edit:hover .icon {
+      fill: #e68900;
+      transform: scale(1.2);
+    }
+
+    .delete:hover .icon {
+      fill: #d32f2f;
+      transform: scale(1.2);
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 420px;
+      max-width: 90%;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #2e7d32;
+      text-align: center;
+    }
+
+    .modal-content label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .modal-actions {
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .modal-actions button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .save-btn {
+      background: #2e7d32;
+      color: white;
+    }
+
+    .cancel-btn {
+      background: #ccc;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="app" id="app">
-      <header>
-        <div class="title">
-          <div class="logo">KI</div>
-          <div>
-            <h1>Rencana Program Praktik Desa – Kampung Iklim (ProKlim)</h1>
-            <div class="subtitle">Tabel kegiatan dengan fitur cari, filter, sortir, cetak, ekspor CSV, tambah, edit, dan hapus.</div>
-          </div>
-        </div>
-        <div class="toolbar">
-          <div class="field">
-            <input id="search" type="search" placeholder="Cari program, tujuan, indikator..." />
-          </div>
-          <div class="field">
-            <select id="filterBidang">
-              <option value="">Semua Bidang</option>
-              <option>Adaptasi</option>
-              <option>Mitigasi</option>
-              <option>Pemberdayaan</option>
-              <option>Pendukung</option>
-            </select>
-          </div>
-          <button class="btn secondary" id="resetBtn">Reset</button>
-          <button class="btn secondary" id="csvBtn">Download CSV</button>
-          <button class="btn primary" id="printBtn">Cetak / PDF</button>
-        </div>
-      </header><button class="add-btn" id="addBtn"> Tambah Data</button>
 
-  <div class="table-wrap">
-    <div class="count" id="count"></div>
-    <div class="table-scroll">
-      <table id="table">
+  <header>
+    <img src="amik.png" alt="Logo Desa">
+    <h1>Program MBKM Desa Bangunemo - KAMPUNG IKLIM</h1>
+  </header>
+
+  <main>
+    <div class="table-container">
+      <div class="table-header">
+        <h2>Daftar Program Kampung Iklim</h2>
+        <button class="add-btn" onclick="openModal()">
+           Tambah Data
+        </button>
+      </div>
+      <table id="programTable">
         <thead>
           <tr>
             <th>No</th>
-            <th>Bidang</th>
-            <th>Program Kegiatan</th>
-            <th>Tujuan</th>
-            <th>Indikator Keberhasilan</th>
-            <th>Output / Hasil</th>
+            <th>Jenis Program</th>
+            <th>Contoh Kegiatan</th>
             <th>Aksi</th>
           </tr>
         </thead>
-        <tbody id="tbody"></tbody>
+        <tbody id="tableBody">
+          <!-- Data dinamis -->
+        </tbody>
       </table>
     </div>
-    <div class="no-data" id="nodata" style="display:none">Tidak ada data yang cocok dengan filter/pencarian.</div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="dataModal">
+    <div class="modal-content">
+      <h3 id="modalTitle">Tambah Data</h3>
+      <label>Jenis Program:</label>
+      <input type="text" id="programInput">
+      <label>Kegiatan:</label>
+      <input type="text" id="activityInput">
+
+      <div class="modal-actions">
+        <button class="cancel-btn" onclick="closeModal()">Batal</button>
+        <button class="save-btn" onclick="saveData()">Simpan</button>
+      </div>
+    </div>
   </div>
 
-  <footer>
-    <div>Template Kampung Iklim • Bebas diubah untuk proposal/laporan.</div>
-    <div><a class="link" href="#" id="howto">Cara pakai</a></div>
-  </footer>
-</div>
+  <script>
+    let editIndex = null;
 
-  </div>  <script>
-    let DATA = JSON.parse(localStorage.getItem('proklimData')) || [
-      { no:1, bidang:"Adaptasi", program:"Pembuatan sumur resapan & biopori", tujuan:"Mengurangi banjir & meningkatkan resapan air tanah", indikator:"Jumlah sumur resapan/biopori dibuat", output:"Berfungsi sebagai pengendali banjir & cadangan air" },
-      { no:2, bidang:"Adaptasi", program:"Pertanian organik tahan iklim", tujuan:"Menjaga ketahanan pangan & mengurangi penggunaan pupuk kimia", indikator:"Lahan pertanian organik terbentuk", output:"Produk sayur/padi organik desa" }
-    ];
-
-    let state = { sortKey:'no', sortDir:'asc', filterBidang:'', q:'' };
-    const $ = s=>document.querySelector(s);
-
-    function saveData(){ localStorage.setItem('proklimData', JSON.stringify(DATA)); }
-
-    function render(){
-      let rows = [...DATA];
-      if(state.filterBidang){ rows = rows.filter(r=>r.bidang===state.filterBidang); }
-      if(state.q){
-        const q=state.q.toLowerCase();
-        rows=rows.filter(r=>Object.values(r).some(v=>String(v).toLowerCase().includes(q)));
+    function openModal(index = null) {
+      document.getElementById('dataModal').style.display = 'flex';
+      if(index !== null){
+        editIndex = index;
+        const row = document.querySelectorAll('#tableBody tr')[index];
+        document.getElementById('programInput').value = row.cells[1].innerText;
+        document.getElementById('activityInput').value = row.cells[2].innerText;
+        document.getElementById('modalTitle').innerText = "Edit Data";
+      } else {
+        editIndex = null;
+        document.getElementById('programInput').value = "";
+        document.getElementById('activityInput').value = "";
+        document.getElementById('modalTitle').innerText = "Tambah Data";
       }
-      const tbody=$('#tbody'); tbody.innerHTML='';
-      if(rows.length===0){ $('#nodata').style.display=''; } else {
-        $('#nodata').style.display='none';
-        rows.forEach((r,i)=>{
-          const tr=document.createElement('tr');
-          tr.innerHTML=`
-            <td>${i+1}</td>
-            <td>${r.bidang}</td>
-            <td>${r.program}</td>
-            <td>${r.tujuan}</td>
-            <td>${r.indikator}</td>
-            <td>${r.output}</td>
-            <td class='actions'>
-              <button onclick='editRow(${i})'></button>
-              <button onclick='deleteRow(${i})'></button>
-            </td>`;
-          tbody.appendChild(tr);
-        });
-      }
-      $('#count').textContent=`${rows.length} data ditampilkan`;
-      saveData();
     }
 
-    function deleteRow(i){ if(confirm('Hapus permanen?')){ DATA.splice(i,1); render(); } }
-
-    function editRow(i){
-      const item=DATA[i];
-      const bidang=prompt('Bidang:',item.bidang)||item.bidang;
-      const program=prompt('Program:',item.program)||item.program;
-      const tujuan=prompt('Tujuan:',item.tujuan)||item.tujuan;
-      const indikator=prompt('Indikator:',item.indikator)||item.indikator;
-      const output=prompt('Output:',item.output)||item.output;
-      DATA[i]={...item,bidang,program,tujuan,indikator,output};
-      render();
+    function closeModal(){
+      document.getElementById('dataModal').style.display = 'none';
     }
 
-    $('#addBtn').addEventListener('click',()=>{
-      const bidang=prompt('Bidang:');
-      if(!bidang) return;
-      const program=prompt('Program Kegiatan:');
-      const tujuan=prompt('Tujuan:');
-      const indikator=prompt('Indikator:');
-      const output=prompt('Output:');
-      DATA.push({no:DATA.length+1,bidang,program,tujuan,indikator,output});
-      render();
-    });
+    function saveData(){
+      const program = document.getElementById('programInput').value.trim();
+      const activity = document.getElementById('activityInput').value.trim();
 
-    $('#search').addEventListener('input',e=>{state.q=e.target.value;render();});
-    $('#filterBidang').addEventListener('change',e=>{state.filterBidang=e.target.value;render();});
-    $('#resetBtn').addEventListener('click',()=>{state={sortKey:'no',sortDir:'asc',filterBidang:'',q:''};$('#search').value='';$('#filterBidang').value='';render();});
-    $('#printBtn').addEventListener('click',()=>window.print());
-    $('#csvBtn').addEventListener('click',()=>{
-      const csv=DATA.map(r=>Object.values(r).join(',')).join('\n');
-      const blob=new Blob([csv],{type:'text/csv'});
-      const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='program.csv';a.click();
-    });
-    $('#howto').addEventListener('click',e=>{e.preventDefault();alert('Gunakan tombol  untuk tambah data,  untuk edit, dan  untuk hapus permanen.');});
+      if(program && activity){
+        if(editIndex !== null){
+          const row = document.querySelectorAll('#tableBody tr')[editIndex];
+          row.cells[1].innerText = program;
+          row.cells[2].innerText = activity;
+        } else {
+          const tbody = document.getElementById('tableBody');
+          const row = tbody.insertRow();
+          row.insertCell(0).innerText = tbody.rows.length; // nomor urut
+          row.insertCell(1).innerText = program;
+          row.insertCell(2).innerText = activity;
+          const actions = row.insertCell(3);
+          actions.innerHTML = actionButtons(tbody.rows.length-1);
+        }
+        updateNumbers();
+        closeModal();
+      } else {
+        alert("Harap isi semua data!");
+      }
+    }
 
-    render();
-  </script></body>
+    function deleteRow(btn){
+      if(confirm("Yakin ingin menghapus data ini secara permanen?")){
+        const row = btn.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+        updateNumbers();
+      }
+    }
+
+    function updateNumbers(){
+      const rows = document.querySelectorAll('#tableBody tr');
+      rows.forEach((row, index) => {
+        row.cells[0].innerText = index+1;
+        row.cells[3].innerHTML = actionButtons(index);
+      });
+    }
+
+    function actionButtons(index){
+      return `
+        <button class="action-btn edit" onclick="openModal(${index})" title="Edit">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 
+            7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 
+            0 0 0-1.41 0l-1.83 1.83 3.75 
+            3.75 1.83-1.83z"/>
+          </svg>
+        </button>
+        <button class="action-btn delete" onclick="deleteRow(this)" title="Hapus">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 
+            1H5v2h14V4h-4.5l-1-1z"/>
+          </svg>
+        </button>
+      `;
+    }
+  </script>
+
+</body>
 </html>
